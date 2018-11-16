@@ -1,4 +1,17 @@
 /**
+ * 倒计时5秒
+ */
+function countDown() {
+  var Time = document.getElementById('time');
+  if(Time.innerHTML==="0"){
+    window.location.href ="https://www.baidu.com"
+  }else{
+    Time.innerHTML= Time.innerHTML-1;
+  }
+};
+// setInterval( countDown ,1000) //调用
+
+/**
  * 保留两位小数,返回值：数值
  */
 function ToFixed(num){

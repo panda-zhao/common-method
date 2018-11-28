@@ -163,3 +163,18 @@ function removeStore(key) {
 }
 
 // removeStore("pass");
+
+//模拟form表单提交
+function postSimulate(url,params) {
+  var form = $(`<form action="${url}" method="post" id="formData"></form>`);
+  var input;
+  $.each(params,function(key,value){
+    input = $(" <input type='hidden'/> ");
+    input.attr({"name":key});
+    input.val(value);
+    form.append(input);
+  });
+  var submit = $(`<input type="submit">`);
+  form.append(submit);
+  form.appendTo("body").submit().remove();
+};

@@ -10,7 +10,18 @@ function countDown() {
   }
 };
 // setInterval( countDown ,1000) //调用
-
+// 生产短信验证码
+function generatedCode() {
+  var code = "";//生成的验证码 
+  var array = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+  for (let i = 0; i < 6; i++) {
+    var index = Math.floor(Math.random() * 10);//随机0-35
+    code += array[index];
+  }
+  console.log("生产的验证码",code)
+  return code;
+};
+// generatedCode()
 /**
  * 保留两位小数,返回值：数值
  */
